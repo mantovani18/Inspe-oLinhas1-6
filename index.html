@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Análise de máquinas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="app-header">
+      <div class="brand-mark" aria-hidden="true">QC</div>
+      <div>
+        <p class="eyebrow">CONTROLE DE QUALIDADE</p>
+        <h1>Análise de produtos</h1>
+      </div>
+    </header>
+
+    <div class="progress" aria-label="Progresso">
+      <span class="progress-bar" id="progressBar"></span>
+    </div>
+    <p class="step-label" id="stepLabel">Identificação da linha</p>
+
+    <section class="screen" id="lineScreen">
+      <div class="card intro-card">
+        <span class="card-icon" aria-hidden="true">01</span>
+        <h2>Identifique a linha</h2>
+        <p>Selecione a linha de produção que será avaliada.</p>
+        <label for="lineSelect">Linha de produção</label>
+        <select id="lineSelect"></select>
+        <button class="primary-button" id="startButton" type="button">Iniciar análise</button>
+      </div>
+    </section>
+
+    <section class="screen hidden" id="formScreen">
+      <form id="analysisForm" novalidate>
+        <div class="card form-intro">
+          <p class="eyebrow">AVALIAÇÃO DE PRODUTOS - FARINHAS E MASSAS</p>
+          <h2 id="lineTitle"></h2>
+          <p>Avalie a qualidade e integridade das massas produzidas no dia.</p>
+        </div>
+        <div id="formFields"></div>
+        <div class="form-actions">
+          <button class="secondary-button" id="backButton" type="button">Voltar</button>
+          <button class="primary-button" id="submitButton" type="submit">Enviar análise</button>
+        </div>
+        <p class="error-message" id="formError" role="alert"></p>
+      </form>
+    </section>
+
+    <section class="screen hidden" id="successScreen">
+      <div class="card success-card">
+        <div class="success-icon" aria-hidden="true">✓</div>
+        <p class="eyebrow">REGISTRO CONCLUÍDO</p>
+        <h2>Análise registrada</h2>
+        <p>O registro foi salvo com segurança na planilha.</p>
+        <p class="analysis-id">ID da análise: <strong id="analysisId"></strong></p>
+        <button class="primary-button" id="newButton" type="button">Nova análise</button>
+      </div>
+    </section>
+  </main>
+  <script src="config.js"></script>
+  <script src="form-data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
